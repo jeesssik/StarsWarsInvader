@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Space Invaders</title>
+    <script src="bundle.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-89969478-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+
+  <body>
+
+    <div id="container">
+      <div
+        class="hide"
+        id="menu-button">
+        Menu
+      </div>
+      <canvas id="game-canvas"></canvas>
+
+
+      <div id="menu-container" class="hide menu-container">
+        <div class='header'>SPACE INVADERS</div>
+        <div id='about-button' class='hide button'>Acerca de</div>
+        <div id='instructions-button' class='hide button'>Instrucciones</div>
+        <div id='resume-button' class='hide button'>Resumir</div>
+        <div id='restart-button' class='hide button'>Reiniciar</div>
+      </div>
+
+      <div id='about' class='hide'>
+        <div id='close-about' class='hide'>cerrar[x]</div>
+        <p>
+          Este es un remake del juego clasico de arcade, Space Invaders.
+          <br>
+          Adaptado para  <a id='port-link' target="_blank" href="https://campus.ort.edu.ar/secundaria/almagro/informatica">Info</a>
+        </p>
+      </div>
+
+      <div id='instructions' class='hide'>
+        <div id='close-instructions' class='hide'>cerrar[x]</div>
+        <p>
+          Presioná espacio para disparar y usá las flechas para moverte.
+
+
+          <br>
+
+          De vez en cuando, un ovni misterioso aparecerá. Si logras
+          matarlo, puede dejar caer artículos que mejoran tu nave.
+          ¡Asegúrate de recogerlos rápidamente porque desaparecerán!
+
+        </p>
+      </div>
+
+      <div id="invader-info" class="show">
+        <p>= 10 puntos</p>
+        <p>= 20 puntos</p>
+        <p>= 40 puntos</p>
+        <p>= ??? puntos</p>
+
+      </div>
+
+      <div id='splash-instruction' class='show'>
+        <p>ESPACIO PARA DISPARAR</p>
+        <p>LAS FLECHAS MUEVEN LA NAVE</p>
+      </div>
+
+      <div id='play-game'>
+        <p>INICIAR</p>
+      </div>
+
+      <!-- Sprite images -->
+
+      <img
+        id="audio"
+        src="./images/audio.png" />
+
+      <img
+        class='hide'
+        id='mute'
+        src='./images/mute.png' />
+
+      <img
+        class='hide'
+        id='game-over'
+        src='./images/game-over.jpg' />
+
+      <img
+        id="main-logo"
+        src="./images/si.png" />
+
+      <!-- <img
+        id="play-game"
+        src="./images/play-game.jpg" /> -->
+
+      <img
+        class="hide"
+        id="defender"
+        src="./images/defender.png" 
+        style="height: 1000px; width: 1000px;"/>
+
+      <img
+        class='hide'
+        id='defender-death'
+        src='./images/defender-death.png' />
+
+      <img
+        class=""
+        id="grunt-1"
+        src="./images/grunt-1.jpg" />
+
+      <img
+        class="hide"
+        id="grunt-2"
+        src="./images/grunt-2.jpg" />
+
+      <img
+        class=""
+        id="soldier-1"
+        src="./images/soldier-1.jpg" />
+
+      <img
+        class="hide"
+        id="soldier-2"
+        src="./images/soldier-2.jpg" />
+
+      <img
+        class=""
+        id="invader-1"
+        src='./images/invader-1.jpg' />
+
+      <img
+        class="hide"
+        id="invader-2"
+        src='./images/invader-2.jpg' />
+
+      <img
+        class=""
+        id="ufo"
+        src="./images/ufo.png" />
+
+      <img
+        class="hide"
+        id="lives"
+        src="./images/lives.jpg" />
+
+      <img
+        class="hide"
+        id="ship-death"
+        src="./images/ship-death.jpg" />
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.core.min.js"></script>
+  </body>
+</html>
